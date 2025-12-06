@@ -1,4 +1,3 @@
-/* Reset */
 * {
     margin: 0;
     padding: 0;
@@ -6,13 +5,11 @@
     font-family: "Segoe UI", sans-serif;
 }
 
-/* Full page background */
+
 body {
     min-height: 100vh;
     width: 100%;
     background: linear-gradient(135deg, #b3b8ff, #e1e5ff);
-
-    /* Center everything */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,9 +19,9 @@ body {
     color: #333;
 }
 
-/* Page title */
+
 header h1 {
-    font-size: 170px;   /* doubled */
+    font-size: 100px;   
     font-weight: 700;
     color: #2d2e66;
     text-align: center;
@@ -32,12 +29,12 @@ header h1 {
     margin-bottom: 30px;
 }
 
-/* Card container */
+
 main {
     background: #ffffff;
-    width: 900px;          /* doubled */
-    padding: 80px;         /* doubled */
-    border-radius: 30px;   /* increased */
+    width: 900px;          
+    padding: 80px;         
+    border-radius: 30px;   
     display: flex;
     flex-direction: column;
     gap: 50px;
@@ -47,7 +44,6 @@ main {
     animation: fadeUp .6s ease;
 }
 
-/* Glow hover */
 main:hover {
     transform: translateY(-12px) scale(1.03);
     box-shadow:
@@ -56,32 +52,29 @@ main:hover {
         0 15px 35px rgba(0,0,0,0.35);
 }
 
-/* Fade animation */
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(50px); }
     to   { opacity: 1; transform: translateY(0px); }
 }
 
-/* Controls layout */
 #controls {
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
 
-/* Labels */
 label {
-    font-size: 32px;   /* doubled */
+    font-size: 32px;   
     font-weight: 600;
     color: #27274f;
 }
 
-/* Input field */
+
 #country {
-    padding: 28px;     /* doubled */
+    padding: 28px;     
     border-radius: 20px;
     border: 2px solid #ccc;
-    font-size: 32px;   /* doubled */
+    font-size: 32px;   
     outline: none;
     transition: all .3s ease;
 }
@@ -91,13 +84,12 @@ label {
     box-shadow: 0 0 16px rgba(130,124,255,0.6);
 }
 
-/* Button */
 #lookup {
-    padding: 28px;     /* doubled */
+    padding: 28px;     
     background: #7371ff;
     border: none;
     border-radius: 20px;
-    font-size: 32px;   /* doubled */
+    font-size: 32px;  
     color: white;
     font-weight: 700;
     cursor: pointer;
@@ -109,13 +101,11 @@ label {
     box-shadow: 0 8px 30px rgba(79,76,236,0.5);
 }
 
-/* Results */
 #result {
-    font-size: 32px;   /* doubled */
+    font-size: 32px;  
     min-height: 40px;
 }
 
-/* Returned list styling */
 #result ul {
     list-style: none;
     background: #f3f5ff;
@@ -130,5 +120,51 @@ label {
 }
 
 #result li:last-child {
+    border-bottom: none;
+}
+
+.loader {
+    width: 50px;
+    height: 50px;
+    border: 6px solid #ddd;
+    border-top: 6px solid #7371ff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 24px;
+    margin-top: 20px;
+    background: #f6f6ff;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.results-table th, .results-table td {
+    padding: 20px;
+    border-bottom: 2px solid #e0e0e0;
+    text-align: left;
+}
+
+.results-table th {
+    background: #7371ff;
+    color: white;
+    font-weight: 700;
+}
+
+.results-table tr:hover {
+    background: #e8e8ff;
+    transition: .3s;
+}
+
+.results-table tr:last-child td {
     border-bottom: none;
 }
