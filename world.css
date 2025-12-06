@@ -1,1 +1,134 @@
-/* Add your own styles */
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* Full page background */
+body {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(135deg, #b3b8ff, #e1e5ff);
+
+    /* Center everything */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+    gap: 50px;
+    color: #333;
+}
+
+/* Page title */
+header h1 {
+    font-size: 170px;   /* doubled */
+    font-weight: 700;
+    color: #2d2e66;
+    text-align: center;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.2);
+    margin-bottom: 30px;
+}
+
+/* Card container */
+main {
+    background: #ffffff;
+    width: 900px;          /* doubled */
+    padding: 80px;         /* doubled */
+    border-radius: 30px;   /* increased */
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.25);
+    transition: all .4s ease;
+    animation: fadeUp .6s ease;
+}
+
+/* Glow hover */
+main:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow:
+        0 0 40px rgba(147, 143, 255, 0.7),
+        0 0 80px rgba(147, 143, 255, 0.5),
+        0 15px 35px rgba(0,0,0,0.35);
+}
+
+/* Fade animation */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to   { opacity: 1; transform: translateY(0px); }
+}
+
+/* Controls layout */
+#controls {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Labels */
+label {
+    font-size: 32px;   /* doubled */
+    font-weight: 600;
+    color: #27274f;
+}
+
+/* Input field */
+#country {
+    padding: 28px;     /* doubled */
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    font-size: 32px;   /* doubled */
+    outline: none;
+    transition: all .3s ease;
+}
+
+#country:focus {
+    border-color: #827cff;
+    box-shadow: 0 0 16px rgba(130,124,255,0.6);
+}
+
+/* Button */
+#lookup {
+    padding: 28px;     /* doubled */
+    background: #7371ff;
+    border: none;
+    border-radius: 20px;
+    font-size: 32px;   /* doubled */
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+#lookup:hover {
+    background: #4f4cec;
+    box-shadow: 0 8px 30px rgba(79,76,236,0.5);
+}
+
+/* Results */
+#result {
+    font-size: 32px;   /* doubled */
+    min-height: 40px;
+}
+
+/* Returned list styling */
+#result ul {
+    list-style: none;
+    background: #f3f5ff;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: inset 0px 4px 20px rgba(0,0,0,0.06);
+}
+
+#result li {
+    padding: 18px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+#result li:last-child {
+    border-bottom: none;
+}
